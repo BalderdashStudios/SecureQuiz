@@ -1,23 +1,24 @@
 {% extends "layout.html" %}
 
-{% block title %}Page 2: Ask for your favorite color{% endblock %}
+{% block title %}Page 3: Ask for your favorite color{% endblock %}
 
 {% block content %}
 	<div class="container mt-5">
 		<div class="row">
-		 <h1>What is NVIDA DLSS?</h1>
+		 <h1>What is the name of this type of texture?</h1>
+		 <img src="../static/images/Albedo.jpg" alt="Flat Color Texture">
 		</div>
 		<div class="row">
 			<div class="col-sm-4">
 				<form action={{ url_for("renderPage3") }} method="POST">
-					<input type="radio" id="Op1" value="ResponseTime" name="Q2">
-					<label for="Op1">It improves response time.</label><br>
-					<input type="radio" id="Op2" value="RaytracingAlgorithum" name="Q2">
-					<label for="Op2">It's a raytracing algorithum.</label><br>
-					<input type="radio" id="Op3" value="BitCoinMiner" name="Q2">
-					<label for="Op3">It's a bit coin miner.</label><br>
-					<input type="radio" id="Op4" value="AIUpscaller" name="Q2">
-					<label for="Op4">It's a real-time AI upscaller.</label><br>
+					<input type="radio" id="Op1" value="Albedo" name="Q3">
+					<label for="Op1">Albedo</label><br>
+					<input type="radio" id="Op2" value="Normal" name="Q3">
+					<label for="Op2">Normal</label><br>
+					<input type="radio" id="Op3" value="Roughness" name="Q3">
+					<label for="Op3">Roughness</label><br>
+					<input type="radio" id="Op4" value="AO" name="Q3">
+					<label for="Op4">AO</label><br>
 					<input type="submit" class="btn btn-primary"  value="Submit">
 				</form> 
 			</div>
