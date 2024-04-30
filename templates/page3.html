@@ -1,15 +1,28 @@
 {% extends "layout.html" %}
 
-{% block title %}Page 3--Now we know everything!{% endblock %}
+{% block title %}Page 2: Ask for your favorite color{% endblock %}
 
 {% block content %}
-  <h1>Now I know:</h1>
-
-<ul>
- <li> Q1 Selection: {{ session['Q1Selection'] }} </li>
- <li> Q2 Selection: {{ session['Q2Selection'] }} </li>
- <li> Your favorite color is: {{ session['favoriteColor'] }} </li>
-</ul>
+	<div class="container mt-5">
+		<div class="row">
+		 <h1>What is NVIDA DLSS?</h1>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<form action={{ url_for("renderPage3") }} method="POST">
+					<input type="radio" id="Op1" value="ResponseTime" name="Q2">
+					<label for="Op1">It improves response time.</label><br>
+					<input type="radio" id="Op2" value="RaytracingAlgorithum" name="Q2">
+					<label for="Op2">It's a raytracing algorithum.</label><br>
+					<input type="radio" id="Op3" value="BitCoinMiner" name="Q2">
+					<label for="Op3">It's a bit coin miner.</label><br>
+					<input type="radio" id="Op4" value="AIUpscaller" name="Q2">
+					<label for="Op4">It's a real-time AI upscaller.</label><br>
+					<input type="submit" class="btn btn-primary"  value="Submit">
+				</form> 
+			</div>
+		</div>
+	</div>
 
 
 

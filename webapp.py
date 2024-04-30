@@ -51,5 +51,17 @@ def renderPage3():
          
     return render_template('home.html')
     
+@app.route('/page4',methods=['GET','POST'])
+def renderPage4():
+    if request.method == 'POST':
+        session["Q3Selection"]=request.form['Q3']
+        
+        print(session["Q3Selection"])
+        return render_template('End.html')
+    else:
+         error = "Error"
+         
+    return render_template('home.html')
+    
 if __name__=="__main__":
     app.run(debug=True)
