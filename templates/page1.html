@@ -3,16 +3,22 @@
 {% block title %}Page 1: Name{% endblock %}
 
 {% block content %}
-  <h1>Page 1: What is your name?</h1>
-
- <form action={{ url_for("renderPage2") }} method="POST">
-  First name:<br>
-  <input type="text" name="firstName">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastName">
-  <input type="submit" value="Submit">
- </form> 
+	<div class="container mt-5">
+		<div class="row">
+		 <h1>What does PBR stand for?</h1>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<form action={{ url_for("renderPage2") }} method="POST">
+					<input type="button" class="btn btn-primary" value="Procedual Backface Rastering" name="Procedual Backface Rastering">
+					<input type="button" class="btn btn-primary" value="Pro Box Raytracer" name="Pro Box Raytracer">
+					<input type="button" class="btn btn-primary" value="Proccesed Baground Radiocity" name="Proccesed Baground Radiocity">
+					<input type="button" class="btn btn-primary" value="Physically Based Rendering" name="Physically Based Rendering">
+					<input type="submit" class="btn btn-primary"  value="Submit">
+				</form> 
+			</div>
+		</div>
+	</div>
 
 
 {% endblock %}

@@ -29,8 +29,8 @@ def renderPage1():
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
     if request.method == 'POST':
-        session["firstName"]=request.form['firstName']
-        session["lastName"]=request.form['lastName']
+        session["firstName"]=request.form['Procedual Backface Rastering']
+        session["lastName"]=request.form['Pro Box Raytracer']
         return render_template('page2.html')
     else:
         error = "Error"
