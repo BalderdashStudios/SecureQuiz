@@ -42,7 +42,9 @@ def renderPage2():
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
     if request.method == 'POST':
-        session["favoriteColor"]=request.form['favoriteColor']
+        session["Q2Selection"]=request.form['Q2']
+        
+        print(session["Q2Selection"])
         return render_template('page3.html')
     else:
          error = "Error"
