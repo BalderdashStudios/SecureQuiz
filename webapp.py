@@ -29,8 +29,10 @@ def renderPage1():
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
     if request.method == 'POST':
-        session["firstName"]=request.form['Procedual Backface Rastering']
-        session["lastName"]=request.form['Pro Box Raytracer']
+        session["Q1Selection"]=request.form['Q1']
+        
+        print(session["Q1Selection"])
+        
         return render_template('page2.html')
     else:
         error = "Error"
@@ -48,4 +50,4 @@ def renderPage3():
     return render_template('home.html')
     
 if __name__=="__main__":
-    app.run(debug=False)
+    app.run(debug=True)

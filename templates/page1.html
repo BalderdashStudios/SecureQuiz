@@ -10,10 +10,14 @@
 		<div class="row">
 			<div class="col-sm-4">
 				<form action={{ url_for("renderPage2") }} method="POST">
-					<input type="button" class="btn btn-primary" value="Procedual Backface Rastering" name="Procedual Backface Rastering">
-					<input type="button" class="btn btn-primary" value="Pro Box Raytracer" name="Pro Box Raytracer">
-					<input type="button" class="btn btn-primary" value="Proccesed Baground Radiocity" name="Proccesed Baground Radiocity">
-					<input type="button" class="btn btn-primary" value="Physically Based Rendering" name="Physically Based Rendering">
+					<input type="radio" id="Op1" value="ProcedualBackfaceRastering" name="Q1">
+					<label for="Op1">Procedual Backface Rastering</label><br>
+					<input type="radio" id="Op2" value="ProBoxRaytracer" name="Q1">
+					<label for="Op1">Pro Box Raytracer</label><br>
+					<input type="radio" id="Op3" value="ProccesedBagroundRadiocity" name="Q1">
+					<label for="Op1">Proccesed Baground Radiocity</label><br>
+					<input type="radio" id="Op4" value="PhysicallyBasedRendering" name="Q1">
+					<label for="Op1">Physically Based Rendering</label><br>
 					<input type="submit" class="btn btn-primary"  value="Submit">
 				</form> 
 			</div>
