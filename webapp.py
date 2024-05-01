@@ -29,11 +29,12 @@ def renderPage1():
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
     if request.method == 'POST':
-        session["Q1Selection"]=request.form['Q1']
+        if "Q1Selection" in session:
         
-        print(session["Q1Selection"])
-        
-        return render_template('page2.html')
+            return render_template('page1.html')
+        else:
+            session["Q1Selection"]=request.form['Q1']
+            return render_template('page2.html')
     else:
         error = "Error"
          
