@@ -56,12 +56,33 @@ def renderPage4():
     if request.method == 'POST':
         session["Q3Selection"]=request.form['Q3']
         
-        print(session["Q3Selection"])
-        return render_template('End.html')
+        Q1Sel = session["Q1Selection"]
+        Q2Sel = session["Q2Selection"]
+        Q3Sel = session["Q3Selection"]
+        
+        Answers = ["PhysicallyBasedRendering", "AIUpscaller", "Albedo"]
+        
+        UserAnswers = [Q1Sel, Q2Sel, Q3Sel]
+        
+        score = checkAnswers(UserAnswers, Answers)
+        
+        numberCorrect=(len(score))
+        
+        return render_template('End.html', number_correct=numberCorrect)
     else:
          error = "Error"
          
     return render_template('home.html')
+    
+#Adapted from: https://www.youtube.com/watch?v=oi7IyIrMGMg
+def checkAnswers(UA, A):
+   correct = []
+   for answers in UA:
+        if answers in A:
+            if answers not in correct:
+                correct.append(answers)
+   return(correct)
+
     
 if __name__=="__main__":
     app.run(debug=True)
