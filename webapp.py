@@ -43,10 +43,12 @@ def renderPage2():
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
     if request.method == 'POST':
-        session["Q2Selection"]=request.form['Q2']
-        
-        print(session["Q2Selection"])
-        return render_template('page3.html')
+        if "Q2Selection" in session:
+            
+            return render_template('page2.html')
+        else:
+            session["Q2Selection"]=request.form['Q2']
+            return render_template('page3.html')
     else:
          error = "Error"
          
@@ -55,21 +57,24 @@ def renderPage3():
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
     if request.method == 'POST':
-        session["Q3Selection"]=request.form['Q3']
+        if "Q3Selection" in session:
+            return render_template('page3.html')
+        else:
+            session["Q3Selection"]=request.form['Q3']
         
-        Q1Sel = session["Q1Selection"]
-        Q2Sel = session["Q2Selection"]
-        Q3Sel = session["Q3Selection"]
+            Q1Sel = session["Q1Selection"]
+            Q2Sel = session["Q2Selection"]
+            Q3Sel = session["Q3Selection"]
         
-        Answers = ["PhysicallyBasedRendering", "AIUpscaller", "Albedo"]
+            Answers = ["PhysicallyBasedRendering", "AIUpscaller", "Albedo"]
         
-        UserAnswers = [Q1Sel, Q2Sel, Q3Sel]
-        
-        score = checkAnswers(UserAnswers, Answers)
-        
-        numberCorrect=(len(score))
-        
-        return render_template('End.html', number_correct=numberCorrect)
+            UserAnswers = [Q1Sel, Q2Sel, Q3Sel]
+            
+            score = checkAnswers(UserAnswers, Answers)
+            
+            numberCorrect=(len(score))
+            
+            return render_template('End.html', number_correct=numberCorrect)
     else:
          error = "Error"
          
