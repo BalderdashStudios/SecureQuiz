@@ -1,5 +1,6 @@
 body {
-
+	text-align: center;
+	
     background-color: #ffffcc;
     color: black;
 }
@@ -13,6 +14,9 @@ div#footer {
     padding: 1em;
 }
 
-.test {
-	width: 100px;
+.image {
+	min-width: 100px;
+	max-width: 150px;
+	padding: 10px;
+	border-radius: 10px;
 }

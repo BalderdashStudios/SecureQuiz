@@ -15,11 +15,15 @@ app.secret_key=os.environ["SECRET_KEY"]; #This is an environment variable.
 
 @app.route('/', methods=['GET', 'POST'])
 def renderMain():
-    return render_template('home.html')
+    personalBest = session["BestScore"]
+    return render_template('home.html',  personal_Best = personalBest)
 
 @app.route('/startOver')
 def startOver():
-    session.clear() #clears variable values and creates a new session
+    session.pop('Q1Selection', None)
+    session.pop('Q2Selection', None)
+    session.pop('Q3Selection', None)
+    #session.clear() #clears variable values and creates a new session
     return redirect(url_for('renderMain')) # url_for('renderMain') could be replaced with '/'
 
 @app.route('/page1', methods=['GET', 'POST'])
@@ -74,6 +78,8 @@ def renderPage4():
             
             numberCorrect=(len(score))
             
+            session["BestScore"]=numberCorrect
+            
             return render_template('End.html', number_correct=numberCorrect)
     else:
          error = "Error"
@@ -88,7 +94,7 @@ def checkAnswers(UA, A):
             if answers not in correct:
                 correct.append(answers)
    return(correct)
-
+ 
     
 if __name__=="__main__":
     app.run(debug=True)
