@@ -80,6 +80,11 @@ def renderPage4():
             
             session["BestScore"]=numberCorrect
             
+            CheckpersonalBest = session["BestScore"]
+            
+            newPB = updatePB(CheckpersonalBest, numberCorrect)
+            print(newPB)
+            
             return render_template('End.html', number_correct=numberCorrect)
     else:
          error = "Error"
@@ -95,6 +100,10 @@ def checkAnswers(UA, A):
                 correct.append(answers)
    return(correct)
  
-    
+def updatePB(PB, NC):
+    personalBest = PB
+    if NC > PB:
+        personalBest = NC
+    return(personalBest)
 if __name__=="__main__":
     app.run(debug=True)
