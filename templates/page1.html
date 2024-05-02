@@ -3,12 +3,12 @@
 {% block title %}Page 1: Name{% endblock %}
 
 {% block content %}
-	<div class="container mt-5">
+	<div class="container mt-5 question">
 		<div class="row">
 		 <h1>What does PBR stand for?</h1>
 		</div>
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-4 question">
 				<form action={{ url_for("renderPage2") }} method="POST">
 					<input type="radio" id="Op1" value="ProcedualBackfaceRastering" name="Q1">
 					<label for="Op1">Procedual Backface Rastering</label><br>
