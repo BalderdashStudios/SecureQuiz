@@ -78,11 +78,10 @@ def renderPage4():
             
             numberCorrect=(len(score))
             
-            session["BestScore"]=numberCorrect
-            
             CheckpersonalBest = session["BestScore"]
             
             newPB = updatePB(CheckpersonalBest, numberCorrect)
+            session["BestScore"]=newPB
             print(newPB)
             
             return render_template('End.html', number_correct=numberCorrect)
