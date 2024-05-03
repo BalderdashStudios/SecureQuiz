@@ -56,6 +56,17 @@ li {
   margin: 0;
   padding: 0;
 }
+
+.infoBox {
+	background-color: #00916E;
+	border-radius: 10px;
+	color: white;
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	justify-content: center;
+	display: block;
+}
 /*
 Green 00916E
 Linen FEEFE5
@@ -63,3 +74,40 @@ Yellow FFCF00
 Orange EE6123
 Red FA003F
 */
+
+/*Animations from last project*/
+.fadeup {
+	animation: fade-up .5s;
+}
+
+.fadedown {
+	animation: fade-down 1s;
+}
+
+
+
+
+
+@keyframes fade-down {
+	0% {
+		opacity: 0;
+		transform: translateY(-30px) scale(0.9);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0px) scale(1);
+	}
+}
+
+@keyframes fade-up {
+	0% {
+		opacity: 0;
+		transform: translateY(30px) scale(0.9);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0px) scale(1);
+	}
+}

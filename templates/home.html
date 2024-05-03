@@ -3,11 +3,16 @@
 {% block title %}Home{% endblock %}
 
 {% block content %} 
-		<div class="row">
+		<div class="row infoBox p-5">
+			<h1>Computer Graphics Flash Cards.</h1>
+			<p>Test your knowledge of computer graphics with these online flash cards.</p>
+		</div>
+		<br>
+		<div class="row fadeup">
 			<div class="col question p-5">
-				<h1>Home</h1>
+				<h2>Personal Best:</h2>
 
-				<p>Personal Best = {{personal_Best}}</p>
+				<h1>{{personal_Best}}</h1>
 			</div>
 			<div class="col question p-5">
 					<a href="/page1">Get started</a>
