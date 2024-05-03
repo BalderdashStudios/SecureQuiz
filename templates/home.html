@@ -3,11 +3,14 @@
 {% block title %}Home{% endblock %}
 
 {% block content %} 
-  <h1>Home</h1>
+		<div class="row">
+			<div class="col question p-5">
+				<h1>Home</h1>
 
-<p>Personal Best = {{personal_Best}}</p>
-
-  <ul>
-    <li><a href="/page1">Get started</a></li>
-  </ul>
+				<p>Personal Best = {{personal_Best}}</p>
+			</div>
+			<div class="col question p-5">
+					<a href="/page1">Get started</a>
+			</div>
+		</div>
 {% endblock %}

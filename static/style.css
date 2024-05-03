@@ -1,8 +1,5 @@
 body {
-	text-align: center;
-	
     background-color: #FEEFE5;
-    color: black;
 }
 
 div#footer {
@@ -17,9 +14,8 @@ div#footer {
 }
 
 .image {
+	max-width: 300px;
 	min-width: 100px;
-	max-width: 150px;
-	padding: 10px;
 	border-radius: 10px;
 }
 
@@ -27,6 +23,38 @@ div#footer {
 	background-color: #EE6123;
 	border-radius: 10px;
 	color: white;
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	justify-content: center;
+	display: block;
+}
+
+a:link, a:visited {
+  background-color: #00916E;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+  margin: auto;
+  width: 100px;
+}
+
+a:hover, a:active {
+  background-color: #015440;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
 }
 /*
 Green 00916E

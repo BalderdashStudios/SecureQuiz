@@ -3,14 +3,19 @@
 {% block title %}Page 3--Now we know everything!{% endblock %}
 
 {% block content %}
-  <h1>Number correct: {{ number_correct }}</h1>
+<div class="container mt-5 question">
+		<div class="row">
+			<div class="col question">  
+				<h1>Number correct: {{ number_correct }}</h1>
 
-<ul>
- <li> Q1 Selection: {{ session['Q1Selection'] }} </li>
- <li> Q2 Selection: {{ session['Q2Selection'] }} </li>
- <li> Q3 Selection: {{ session['Q3Selection'] }} </li>
-</ul>
+				<ul>
+				 <li> Q1 Selection: {{ session['Q1Selection'] }} </li>
+				 <li> Q2 Selection: {{ session['Q2Selection'] }} </li>
+				 <li> Q3 Selection: {{ session['Q3Selection'] }} </li>
+				</ul>
 
-
+			</div>
+		</div>
+ </div> 
 
 {% endblock %}
