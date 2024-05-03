@@ -52,11 +52,23 @@ ul {
   padding: 0;
 }
 
-li {
-  margin: 0;
+.selection {
+  margin: 10px;
   padding: 0;
+  background-color: #00916E;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
+.selectionChoice {
+	background-color: #015440;
+}
+
+.selection:hover {
+	background-color: #015440;
+}
 .infoBox {
 	background-color: #00916E;
 	border-radius: 10px;
@@ -67,6 +79,17 @@ li {
 	justify-content: center;
 	display: block;
 }
+
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  display: inline;
+  margin-right: 10px;
+}
+
 /*
 Green 00916E
 Linen FEEFE5
