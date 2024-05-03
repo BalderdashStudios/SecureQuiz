@@ -40,8 +40,11 @@ def renderPage2():
         
             return render_template('page1.html')
         else:
-            session["Q1Selection"]=request.form['Q1']
-            return render_template('page2.html')
+            if "Q1" in request.form:
+                session["Q1Selection"]=request.form['Q1']
+                return render_template('page2.html')
+            else:
+                return render_template('page1.html')
     else:
         error = "Error"
          
@@ -54,8 +57,11 @@ def renderPage3():
             
             return render_template('page2.html')
         else:
-            session["Q2Selection"]=request.form['Q2']
-            return render_template('page3.html')
+            if "Q2" in request.form:
+                session["Q2Selection"]=request.form['Q2']
+                return render_template('page3.html')
+            else:
+                return render_template('page2.html')
     else:
          error = "Error"
          
@@ -67,27 +73,30 @@ def renderPage4():
         if "Q3Selection" in session:
             return render_template('page3.html')
         else:
-            session["Q3Selection"]=request.form['Q3']
-        
-            Q1Sel = session["Q1Selection"]
-            Q2Sel = session["Q2Selection"]
-            Q3Sel = session["Q3Selection"]
-        
-            Answers = ["PhysicallyBasedRendering", "AIUpscaller", "Albedo"]
-        
-            UserAnswers = [Q1Sel, Q2Sel, Q3Sel]
+            if "Q3" in request.form:
+                session["Q3Selection"]=request.form['Q3']
             
-            score = checkAnswers(UserAnswers, Answers)
+                Q1Sel = session["Q1Selection"]
+                Q2Sel = session["Q2Selection"]
+                Q3Sel = session["Q3Selection"]
             
-            numberCorrect=(len(score))
+                Answers = ["PhysicallyBasedRendering", "AIUpscaller", "Albedo"]
             
-            CheckpersonalBest = session["BestScore"]
-            
-            newPB = updatePB(CheckpersonalBest, numberCorrect)
-            session["BestScore"]=newPB
-            print(newPB)
-            
-            return render_template('End.html', number_correct=numberCorrect)
+                UserAnswers = [Q1Sel, Q2Sel, Q3Sel]
+                
+                score = checkAnswers(UserAnswers, Answers)
+                
+                numberCorrect=(len(score))
+                
+                CheckpersonalBest = session["BestScore"]
+                
+                newPB = updatePB(CheckpersonalBest, numberCorrect)
+                session["BestScore"]=newPB
+                print(newPB)
+                
+                return render_template('End.html', number_correct=numberCorrect)
+            else:
+                return render_template('page3.html')
     else:
          error = "Error"
          
