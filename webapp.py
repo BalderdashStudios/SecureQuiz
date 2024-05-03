@@ -15,7 +15,10 @@ app.secret_key=os.environ["SECRET_KEY"]; #This is an environment variable.
 
 @app.route('/', methods=['GET', 'POST'])
 def renderMain():
-    personalBest = session["BestScore"]
+    if "BestScore" in session:
+        personalBest = session["BestScore"]
+    else:
+        session["BestScore"] = 0
     return render_template('home.html',  personal_Best = personalBest)
 
 @app.route('/startOver')
